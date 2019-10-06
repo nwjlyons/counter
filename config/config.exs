@@ -12,7 +12,10 @@ config :counter, CounterWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "853quIWUS3hluTdlvP3IVmi5x+Y8aIhVPWuFnCTHw9AtOb+zQRhAypdaQVrQBFit",
   render_errors: [view: CounterWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Counter.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Counter.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "l3Dj1bzL7aOU+K9agwiPGR5LM2Eu0p8p"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -21,6 +24,9 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :phoenix,
+  template_engines: [leex: Phoenix.LiveView.Engine]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
