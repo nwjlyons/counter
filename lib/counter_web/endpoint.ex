@@ -2,7 +2,7 @@ defmodule CounterWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :counter
 
   socket "/socket", CounterWeb.UserSocket,
-    websocket: true,
+    websocket: [timeout: 45_000],
     longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket
