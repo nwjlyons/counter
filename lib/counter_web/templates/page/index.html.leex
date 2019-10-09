@@ -6,3 +6,11 @@
     <button phx-click="decrement">-1</button>
     <button phx-click="reset">Reset</button>
 </div>
+
+
+<div>
+    <input placeholder="search" phx-focus="activateSearch" phx-blur="deactivateSearch" phx-keyup="filterSearch">
+    <%= for item <- @items do %>
+        <div><%= item %></div>
+    <% end %>
+</div>

@@ -1,4 +1,27 @@
 /* This file is for your main application css. */
 
-@import "./phoenix.css";
-@import "../../deps/phoenix_live_view/assets/css/live_view.css";
+/*@import "../../deps/phoenix_live_view/assets/css/live_view.css";*/
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.site__header {
+    min-height: 3rem;
+    background-color: black;
+}
+
+.site__main {
+    flex-grow: 1;
+}
+
+.site__footer {
+    min-height: 3rem;
+    background-color: beige;
+}
+
